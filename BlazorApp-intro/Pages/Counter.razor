@@ -8,16 +8,19 @@
 <p role="status">Name: @name</p>
 <p role="status">Date: @date</p>
 
+<img src="@img" style="width: 300px; height: 300px; border:none;"/>
+
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
-<button class="btn btn-outline-success" @onclick="ShowName">Show name</button>
+<button class="btn btn-outline-success" @onclick="ShowName">Show name</button>              
 
+<button class="btn btn-secondary" @onclick="ShowImage">Show Mountain</button>
 
 @code {
     private int currentCount = 0;
     private string name = " ";
     private DateOnly date;
-    
+	private string img = " ";
 
     private void IncrementCount()
     {
@@ -34,5 +37,13 @@
         date.Day.ToString();
         date.Month.ToString();
         date.Year.ToString();
+    }
+
+    private void ShowImage()
+
+    {
+		name = "Mount Everest";
+        img = "https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg";
+        
     }
 }
