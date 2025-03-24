@@ -2,17 +2,37 @@
 
 <PageTitle>Counter</PageTitle>
 
-<h1>Counter</h1>
+<h1>Test</h1>
 
 <p role="status">Current count: @currentCount</p>
+<p role="status">Name: @name</p>
+<p role="status">Date: @date</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+<button class="btn btn-outline-success" @onclick="ShowName">Show name</button>
+
+
 @code {
     private int currentCount = 0;
+    private string name = " ";
+    private DateOnly date;
+    
 
     private void IncrementCount()
     {
         currentCount++;
+    }
+
+    private void ShowName()
+    {
+
+        name = "Nyi Ny"; 
+    }
+
+    private void showDate() {
+        date.Day.ToString();
+        date.Month.ToString();
+        date.Year.ToString();
     }
 }
